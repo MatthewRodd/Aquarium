@@ -1,22 +1,24 @@
 window.onload=function() {
     lengthObj = document.getElementById('txtLength');
-    girthObj = document.getElementById('txtGirth');
-    weightObj = document.getElementById('tdWeight');
+    widthObj = document.getElementById('txtWidth');
+	heightObj = document.getElementById('txtHeight');
+    costObj = document.getElementById('tdCos');
     document.getElementById('btnReset').onclick = resetInputs;
-    document.getElementById('btnCalc').onclick = calcWeight;
+    document.getElementById('btnCalc').onclick = calccost;
 }
 function resetInputs() {
     lengthObj.value = '';
-    girthObj.value = '';
-    weightObj.innerHTML = '';
-}
-function calcWeight() {
-    var length = new Number(lengthObj.value);
-    var girth = new Number(girthObj.value);
-    weightObj.innerHTML = '';
-    if(isNaN(length) || isNaN(girth)) {
-        alert('Invalid length or girth');
+    if(isNaN(length) || isNaN(width)) {
+        alert('Invalid length or width');
         return;
     }
-    weightObj.innerHTML = length*Math.pow(girth,2)/800;
+    costObj.innerHTML = length*Math.pow(width,2)/800;
 }
+
+    widthObj.value = '';
+    costObj.innerHTML = '';
+}
+function calccost() {
+    var length = new Number(lengthObj.value);
+    var width = new Number(widthObj.value);
+    costObj.innerHTML = '';
